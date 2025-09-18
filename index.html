@@ -15,7 +15,7 @@
         background: transparent !important;
       }
 
-      
+      /* --- NEW: background layer that sits behind Unity --- */
       #bg-layer {
         position: fixed;
         inset: 0;
@@ -207,7 +207,7 @@
         }
       }
 
-      /* Unity container/canvas (from template) */
+      /* Unity container/canvas (from your template) */
       #unity-container {
         position: fixed;
         inset: 0;
@@ -265,18 +265,19 @@
       </div>
     </div>
 
-    <!-- Pretty background that lives behind the Unity canvas -->
+    <!-- NEW: pretty background that lives behind the Unity canvas -->
     <div id="bg-layer">
       <div class="bg-circle one"></div>
       <div class="bg-circle two"></div>
       <div class="bg-circle thr"></div>
     </div>
 
-    <!-- Unity Build -->
+    <!-- Unity Build (unchanged) -->
     <div id="unity-container" class="unity-desktop">
       <canvas id="unity-canvas" width=960 height=600 tabindex="-1"></canvas>
       <div id="unity-warning"></div>
     </div>
+
 
     <!-- Hidden banner to be revealed on tearing completion -->
     <div id="tearing-status">Tearing complete!</div>
@@ -307,12 +308,12 @@
       }
 
       var buildUrl  = "Build";
-      var loaderUrl = buildUrl + "/PrezzyBuild.loader.js";
+      var loaderUrl = buildUrl + "/PrezzyBuildDevelopment.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/PrezzyBuild.data",
-        frameworkUrl: buildUrl + "/PrezzyBuild.framework.js",
-        codeUrl: buildUrl + "/PrezzyBuild.wasm",
+        dataUrl: buildUrl + "/PrezzyBuildDevelopment.data",
+        frameworkUrl: buildUrl + "/PrezzyBuildDevelopment.framework.js",
+        codeUrl: buildUrl + "/PrezzyBuildDevelopment.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "MindLabz",
         productName: "WebGltest",
